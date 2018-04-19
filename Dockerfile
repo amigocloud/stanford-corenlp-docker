@@ -20,7 +20,6 @@ EXPOSE $port
 WORKDIR /home/stanford-corenlp-full-2018-02-27
 
 RUN wget -O stanford-spanish-corenlp-models.jar http://nlp.stanford.edu/software/stanford-spanish-corenlp-2018-02-27-models.jar
-#RUN mv -f stanford-spanish-corenlp-models.jar /home/stanford-corenlp-full-2018-02-27
 
 CMD java -cp "*" -mx4g edu.stanford.nlp.pipeline.StanfordCoreNLPServer \
     -serverProperties StanfordCoreNLP-spanish.properties
