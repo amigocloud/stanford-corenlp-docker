@@ -26,3 +26,5 @@ spec:
         - containerPort: 9000
           name: corenlp
           protocol: TCP
+      imagePullSecrets:
+      - name: regcred
