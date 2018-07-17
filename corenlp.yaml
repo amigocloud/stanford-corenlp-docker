@@ -1,0 +1,28 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: corenlp
+  labels:
+    app: corenlp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+     app: corenlp
+  template:
+    metadata:
+      labels:
+        app: corenlp
+    spec:
+      containers:
+      - name: corenlp
+        image: docker.amigocloud.com/amigocloud/stanford-corenlp:latest
+        resources:
+          limits:
+            cpu: 1000m
+          requests:
+            cpu: 100m
+        ports:
+        - containerPort: 9000
+          name: corenlp
+          protocol: TCP
